@@ -12,3 +12,6 @@ set app_password=....
 set DEBUG=app:startup,app:db
     or
 set DEBUG=app:*
+
+
+In this application we use 'pug' as a view engine

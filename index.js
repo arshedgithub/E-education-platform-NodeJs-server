@@ -14,6 +14,10 @@ app.use(helmet())
 
 app.use(logger)
 
+// set pug as view engine
+app.set('view engine', 'pug')
+app.set('views', './views')  // default this is not required
+
 // configuration
 console.log('Application Name: '+ config.get('name'));
 console.log('Mail Server: '+ config.get('mail.host'));
@@ -34,7 +38,8 @@ const courses = [
     {id: 3, name: "course3"}
 ]
 app.get('/', (req,res) => {
-    res.send('this is root.')
+    // rendering pug file
+    res.render('index', { title: 'root page', heading: 'hello'}) 
 })
 
 app.get('/api/courses', (req,res) => {
